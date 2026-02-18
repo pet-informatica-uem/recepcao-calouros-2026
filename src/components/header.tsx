@@ -1,96 +1,153 @@
-'use client'
-
-import { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
-export function Header() {
-  const [isAberto, setIsAberto] = useState(false);
-  const rotaAtual = usePathname(); // pega a rota atual da pagina
-
-  // verifica se o link corresponde a pagina atual
-  const isAtivo = (caminho: string) => rotaAtual === caminho;
-
-  const linksNav = [
-    { nome: "sobre nós", href: "/" },
-    { nome: "petianos", href: "/petianos" },
-    { nome: "eventos", href: "/eventos" },
-    { nome: "contato", href: "#rodape" },
-  ];
-
-  // bloqueia o scroll da pagina quando o header mobile ta aberto
-  useEffect(() => {
-    document.body.style.overflow = isAberto ? "hidden" : "unset";
-  }, [isAberto]);
-
+export default function Header() {
   return (
-    <header className="relative w-full bg-white z-50">
-      <div className="flex items-center justify-between py-4 px-6 md:px-12 lg:px-20 xl:px-36">
-        
-        {/* logo */}
-        <Link href="/" className="z-50 min-w-[3.44rem]">
-          <Image src="/logo.svg" alt="Logo do PET" width={55} height={55} />
+    <header
+      id="inicio"
+      className="h-20 flex sticky top-0 z-50 bg-white text-black"
+    >
+      <div className="flex items-center justify-between gap-2 md:gap-8 md:justify-between px-4">
+        {/* Start Button */}
+        <Link href="/#home">
+          <div className="flex items-center justify-center gap-3 color-black border border-black p-3 hover:bg-gray-200">
+            <Image
+            src={"/logo/start-logo.png"}
+            width={390}
+            height={290}
+            alt="Logo da Recepção de Calouros"
+            className="max-w-15 mx-auto"
+            />
+            Start
+          </div>
         </Link>
 
-        {/* navegacao desktop */}
-        <nav className="hidden lg:flex">
-          <ul className="flex flex-row text-lg font-extrabold text-blue gap-8 xl:gap-24">
-            {linksNav.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href}
-                  className="group relative pb-1 transition-all duration-300 whitespace-nowrap">
-                  {link.nome}
-                  {/* link atual sublinhado */}
-                  <span className={`absolute bottom-0 left-0 h-[0.125rem] bg-blue transition-all duration-300 ease-in-out
-                    ${isAtivo(link.href) ? "w-full" : "w-0 group-hover:w-full"}`}/>
+        {/* Entities Menu */}
+        <div className="flex-1 flex">
+          <nav className="flex justify-center">
+            <ul className="flex justify-around md:justify-center">
+              <li>
+                <Link href="/#pet">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-pet.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo do PET"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
                 </Link>
               </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* botao desktop */}
-        <button className="hidden cursor-pointer lg:block text-white text-lg font-extrabold bg-blue py-1 px-4 rounded-md hover:scale-105 transition-all duration-300 whitespace-nowrap">
-          entrar
-        </button>
-
-        {/* botao de menu hamburguer */}
-        <button className="relative z-50 flex items-center justify-center lg:hidden w-10 h-10 text-blue transition-all duration-300"
-          onClick={() => setIsAberto(!isAberto)}
-        >
-          {/* animacao de transicao entre os icones */}
-          <div className={`absolute transition-all duration-300 ${isAberto ? "rotate-90 opacity-0 scale-0" : "rotate-0 opacity-100 scale-100"}`}>
-            <Menu size={32} />
-          </div>
-          <div className={`absolute transition-all duration-300 ${isAberto ? "rotate-0 opacity-100 scale-100" : "-rotate-90 opacity-0 scale-0"}`}>
-            <X size={32} />
-          </div>
-        </button>
-
-        {/* menu no mobile  */}
-        <nav className={`fixed inset-0 bg-white transform transition-all duration-500 ease-in-out z-40
-          ${isAberto ? "translate-x-0" : "translate-x-full"} lg:hidden flex flex-col items-center justify-center`}>
-          <ul className="flex flex-col items-center gap-10 text-2xl font-extrabold text-blue">
-            {linksNav.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="group relative pb-2"
-                  onClick={() => setIsAberto(false)}>
-                  {link.nome}
-                  <span className={`
-                    absolute bottom-0 left-0 h-[0.188rem] bg-blue transition-all duration-300
-                    ${isAtivo(link.href) ? "w-full" : "w-0"}
-                  `}></span>
+              <li>
+                <Link href="/#conectadas">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-conectadas.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo do Conectadas"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
                 </Link>
               </li>
-            ))}
-            <button className="mt-4 cursor-pointer text-white text-xl bg-blue py-2 px-10 rounded-md active:scale-95 transition-transform">
-              entrar
-            </button>
-          </ul>
-        </nav>
+              <li>
+                <Link href="/#caccom">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-caccom.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo do CACCOM"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
+                  
+                </Link>
+              </li>
+              <li>
+                <Link href="/#cainfo">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-cainfo.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo do CAINFO"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#ieee">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-ieee.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo do IEEE"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#robodin">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-robodin.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo do RoboDIN"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#aaacex">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-aaacex.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo da AAACEX"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#main">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-main.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo da Main"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#aedin">
+                  <div className="p-2 hover:bg-gray-200">
+                    <Image
+                    src={"/entities/small-aedin.png"}
+                    width={350}
+                    height={330}
+                    alt="Logo da AEDIN"
+                    className="max-w-14 mx-auto"
+                    />
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
-  )
+  );
 }
