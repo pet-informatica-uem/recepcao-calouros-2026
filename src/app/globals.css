@@ -32,18 +32,18 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-14px);
+    transform: translateY(-6px);
   }
 }
 
 .animate-float {
-  animation: float 5s ease-in-out infinite;
-}
-
-.animate-float-slow {
   animation: float 7s ease-in-out infinite;
 }
 
+.animate-float-slow {
+  animation: float 10s ease-in-out infinite;
+}
+
 .animate-float-fast {
-  animation: float 3.5s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }

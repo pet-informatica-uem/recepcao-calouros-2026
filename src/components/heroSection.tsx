@@ -3,8 +3,8 @@ import Image from "next/image";
 export function HeroSection() {
   return (
     <section className="w-full flex items-center justify-center">
-    <div className="relative w-250">
-        <div className="relative w-250">
+    <div className="relative w-fill">
+        <div className="relative w-150">
             <Image
             src="/logo/big-window.png"
             alt="Janela vazia"
@@ -30,7 +30,7 @@ export function HeroSection() {
                 border border-white animate-float-slow"
             />
         </div>
-        <div className="relative w-96 translate-y-96 -translate-x-40">
+        <div className="relative w-56 translate-y-56 -translate-x-28">
             <Image
             src="/logo/small-window.png"
             alt="Janela vazia"
