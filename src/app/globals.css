@@ -47,3 +47,112 @@ body {
 .animate-float-fast {
   animation: float 5s ease-in-out infinite;
 }
+
+/* efeito crt */
+.crt {
+  animation: crtFlicker 2.8s infinite, crtJitter 4.5s infinite;
+  will-change: opacity, transform, filter;
+}
+
+.crt-noise {
+  position: absolute;
+  inset: -200%;
+  opacity: 0.14;
+  background-image: url("/crt/noise.svg");
+  background-repeat: repeat;
+  filter: contrast(220%) brightness(55%);
+  animation: noiseMove 0.45s steps(2) infinite;
+}
+
+.crt-scanlines {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.055), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.055));
+  background-size: 100% 4px, 3px 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+}
+
+.crt-roll {
+  position: absolute;
+  inset: -45% 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: roll 5.5s linear infinite;
+  mix-blend-mode: screen;
+}
+
+.crt-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.55) 100%);
+  opacity: 0.6;
+}
+
+/* animações do efeito */
+
+/* brilho piscando*/
+@keyframes crtFlicker {
+  0% { opacity: 0.95; filter: brightness(1) contrast(1.05); }
+  5% { opacity: 0.85; }
+  6% { opacity: 0.98; }
+  11% { opacity: 0.80; }
+  12% { opacity: 0.97; }
+  31% { opacity: 0.86; }
+  32% { opacity: 0.98; }
+  46% { opacity: 0.84; }
+  47% { opacity: 0.98; }
+  61% { opacity: 0.88; }
+  62% { opacity: 0.99; }
+  81% { opacity: 0.86; }
+  82% { opacity: 0.98; }
+  100% { opacity: 0.95; filter: brightness(1) contrast(1.05); }
+}
+
+/* treme a tela */
+@keyframes crtJitter {
+  0%, 100% { transform: translate(0, 0); }
+  11% { transform: translate(0, 1px); }
+  12% { transform: translate(0, 0); }
+  36% { transform: translate(0, -1px); }
+  37% { transform: translate(0, 0); }
+  71% { transform: translate(1px, 0); }
+  72% { transform: translate(0, 0); }
+}
+
+/* move a imagem de ruido */
+@keyframes noiseMove {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 1%); }
+  50% { transform: translate(-1%, -2%); }
+  75% { transform: translate(2%, 1%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* efeito de faixa de luz subindo e descendo */
+@keyframes roll {
+  0% {
+    transform: translateY(-60%);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.55;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+}
