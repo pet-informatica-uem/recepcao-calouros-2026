@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Jersey_10 } from "next/font/google";
+import { Jersey_20 } from "next/font/google";
 import Header from "../components/header";
 import "./globals.css";
 import { CRTEffect } from "../components/crtEffect";
 
-const jersey = Jersey_10({
+const jersey = Jersey_20({
   weight: '400',
   subsets: ['latin'],
 });

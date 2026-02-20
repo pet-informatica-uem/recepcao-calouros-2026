@@ -92,7 +92,7 @@ export default function Header() {
               </ul>
             </nav>
           </div>
-          {/* <div className="bg-black h-14 w-0.5 border-r-2"></div> */}
+          <div className="bg-black h-14 w-0.5 border-r-2"></div>
       </div>
 
         <div className="flex items-center gap-4">
