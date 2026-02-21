@@ -51,42 +51,47 @@ body {
 /* efeito crt */
 .crt {
   animation: crtFlicker 2.8s infinite, crtJitter 4.5s infinite;
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
+  contain: layout style;
 }
 
 .crt-noise {
   position: absolute;
-  inset: -200%;
+  inset: -20%;
   opacity: 0.14;
   background-image: url("/crt/noise.svg");
   background-repeat: repeat;
-  filter: contrast(220%) brightness(55%);
-  animation: noiseMove 0.45s steps(2) infinite;
+  animation: noiseMove 0.8s steps(2) infinite;
+  will-change: transform;
 }
 
 .crt-scanlines {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.055), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.055));
-  background-size: 100% 4px, 3px 100%;
-  mix-blend-mode: multiply;
-  opacity: 0.85;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.28) 2px,
+    rgba(0, 0, 0, 0.28) 4px
+  );
+  opacity: 0.7;
+  pointer-events: none;
+  zoom: reset;
 }
 
 .crt-roll {
   position: absolute;
-  inset: -45% 0;
+  inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.06) 45%,
-    rgba(255, 255, 255, 0) 55%,
-    rgba(255, 255, 255, 0) 100%
+    transparent 0%,
+    rgba(255, 255, 255, 0.07) 40%,
+    rgba(255, 255, 255, 0.07) 60%,
+    transparent 100%
   );
-  animation: roll 5.5s linear infinite;
-  mix-blend-mode: screen;
+  animation: roll 6.5s linear infinite;
+  will-change: transform, opacity;
 }
 
 .crt-vignette {
@@ -96,24 +101,25 @@ body {
   opacity: 0.6;
 }
 
-/* animações do efeito */
-
-/* brilho piscando*/
+/* brilho piscando */
 @keyframes crtFlicker {
-  0% { opacity: 0.95; filter: brightness(1) contrast(1.05); }
-  5% { opacity: 0.85; }
-  6% { opacity: 0.98; }
-  11% { opacity: 0.80; }
+  0% { opacity: 0.95; }
+  5% { opacity: 0.83; }
+  6% { opacity: 0.99; filter: brightness(1.08); }
+  7% { opacity: 0.95; filter: brightness(1); }
+  11% { opacity: 0.79; }
   12% { opacity: 0.97; }
-  31% { opacity: 0.86; }
-  32% { opacity: 0.98; }
-  46% { opacity: 0.84; }
+  31% { opacity: 0.85; }
+  32% { opacity: 0.99; filter: brightness(1.06); }
+  33% { opacity: 0.95; filter: brightness(1); }
+  46% { opacity: 0.82; }
   47% { opacity: 0.98; }
-  61% { opacity: 0.88; }
+  61% { opacity: 0.87; }
   62% { opacity: 0.99; }
-  81% { opacity: 0.86; }
-  82% { opacity: 0.98; }
-  100% { opacity: 0.95; filter: brightness(1) contrast(1.05); }
+  81% { opacity: 0.84; }
+  82% { opacity: 0.98; filter: brightness(1.05); }
+  83% { opacity: 0.95; filter: brightness(1); }
+  100% { opacity: 0.95; }
 }
 
 /* treme a tela */
@@ -129,30 +135,35 @@ body {
 
 /* move a imagem de ruido */
 @keyframes noiseMove {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-2%, 1%); }
-  50% { transform: translate(-1%, -2%); }
-  75% { transform: translate(2%, 1%); }
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-3%, 2%); }
+  50%  { transform: translate(2%, -3%); }
+  75%  { transform: translate(-2%, 2%); }
   100% { transform: translate(0, 0); }
 }
 
 /* efeito de faixa de luz subindo e descendo */
 @keyframes roll {
-  0% {
-    transform: translateY(-60%);
-    opacity: 0;
+  0%   { transform: translateY(-100%); opacity: 0; }
+  8%   { opacity: 0.5; }
+  50%  { opacity: 0.5; }
+  92%  { opacity: 0; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .crt-noise {
+    inset: 0;
+    opacity: 0.08;
+    animation: none;
   }
-  8% {
-    opacity: 0.55;
+
+  .crt-scanlines {
+    opacity: 0.45;
   }
-  50% {
-    opacity: 0.55;
-  }
-  92% {
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(60%);
-    opacity: 0;
+
+  .crt {
+    animation: crtFlicker 6s infinite, crtJitter 8s infinite;
   }
 }
