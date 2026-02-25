@@ -35,18 +35,6 @@ export function Clock() {
 }
 
 export default function Header({abrirJanela}: {abrirJanela: (id: entidadeKey) => void}) {
-  const entities = [
-    { href: "#pet", img: "/entities/small-pet.png", alt: "Logo do PET" },
-    { href: "#conectadas", img: "/entities/small-conectadas.png", alt: "Logo do Conectadas" },
-    { href: "#caccom", img: "/entities/small-caccom.png", alt: "Logo do CACCOM" },
-    { href: "#cainfo", img: "/entities/small-cainfo.png", alt: "Logo do CAINFO" },
-    { href: "#ieee", img: "/entities/small-ieee.png", alt: "Logo do IEEE" },
-    { href: "#robodin", img: "/entities/small-robodin.png", alt: "Logo do RoboDIN" },
-    { href: "#aaacex", img: "/entities/small-aaacex.png", alt: "Logo da AAACEX" },
-    { href: "#main", img: "/entities/small-main.png", alt: "Logo da Main" },
-    { href: "#aedin", img: "/entities/small-aedin.png", alt: "Logo da AEDIN" },
-  ];
-
   return (
     <header
       id="inicio"

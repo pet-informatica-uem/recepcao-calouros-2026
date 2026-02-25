@@ -1,3 +1,5 @@
+import { Linkedin } from "lucide-react";
+
 export default interface entidadeProps {
     image: string;
     image_header: string;
@@ -8,6 +10,7 @@ export default interface entidadeProps {
     site: string | null;
     facebook: string | null;
     discord: string | null;
+    linkedin: string | null;
 }
 
 export type entidadeKey = keyof typeof DADOSENTIDADES
@@ -22,7 +25,8 @@ export const DADOSENTIDADES = {
         instagram: "https://www.instagram.com/petinfouem/",
         discord: "https://discord.com/invite/q3fpMKW9CS",
         site: "https://www.petinfouem.com.br/",
-        facebook: null
+        facebook: null,
+        linkedin: "linkedin.com/company/pet-informática-uem/"
     },
     "#conectadas": {
         image: "/entities/conectadas-pixel.png",
@@ -33,7 +37,8 @@ export const DADOSENTIDADES = {
         instagram: "https://www.instagram.com/conectadasuem/",
         discord: null,
         site: null,
-        facebook:"https://www.facebook.com/conectadasuem"
+        facebook:"https://www.facebook.com/conectadasuem",
+        linkedin: null
     },
     "#caccom": {
         image: "/entities/caccom-pixel.png",
@@ -44,7 +49,8 @@ export const DADOSENTIDADES = {
         instagram: "https://www.instagram.com/caccomuem/",
         discord: null,
         site: "http://www.din.uem.br/caccom/",
-        facebook: null
+        facebook: null,
+        linkedin: null,
     },
     "#cainfo": {
         image: "/entities/cainfo-pixel.png",
@@ -55,18 +61,20 @@ export const DADOSENTIDADES = {
         instagram: "https://www.instagram.com/cainfouem/",
         discord: null,
         site: "http://www.din.uem.br/cainfo/",
-        facebook: null
+        facebook: null,
+        linkedin: null,
     },
     "#ieee": {
-        image: "/entities/ieee-pixel.png",
-        image_header: "/entities/small-ieee.png",
+        image: "/entities/ieee-pixel-nova.png",
+        image_header: "/entities/small-ieee-new.png",
         titulo: "IEEE",
         text: "O Ramo Estudantil IEEE da UEM promove inovação e tecnologia por meio de quatro sociedades: RAS (automação e robótica), PES (energia), BioEng (engenharia biomédica) e CS (computação). Seus projetos incluem jogos educativos, automação assistiva, maquetes de usinas e desenvolvimento web, unindo teoria e prática para impactar a comunidade.",
-        cor: "#DD8228",
+        cor: "#0172ae",
         instagram: "https://www.instagram.com/ieeeuem/",
         discord: null,
         site: "https://www.ieee.org.br/",
-        facebook: null
+        facebook: null,
+        linkedin: null,
     },
     "#robodin": {
         image: "/entities/robodin-pixel.png",
@@ -77,7 +85,8 @@ export const DADOSENTIDADES = {
         instagram: "https://www.instagram.com/robodin.uem/",
         discord: null,
         site: null,
-        facebook: null
+        facebook: null,
+        linkedin: null,
     },
     "#aaacex": {
         image: "/entities/aaacex-pixel.png",
@@ -88,28 +97,31 @@ export const DADOSENTIDADES = {
         instagram: "https://www.instagram.com/exatasuem/",
         discord: null,
         site: null,
-        facebook:null
+        facebook:null,
+        linkedin: null,
     },
     "#main": {
         image: "/entities/main-pixel.png",
         image_header: "/entities/small-main.png",
         titulo: "MAIN EMPRESA JUNIOR",
-        text: "main main main main main main main main main main main main main main main main main main main main main main main main main main main ",
+        text: "A Main é uma Empresa Júnior dos cursos de Ciência da Computação e Engenharia de Software. Formada integralmente por estudantes e professores, é uma organização sem fins lucrativos que desenvolve projetos reais com metodologia empresarial, atuando como uma ponte entre a universidade e o mercado de trabalho",
         cor: "#AE3AC0",
         instagram: "https://www.instagram.com/main.ej.uem/",
         discord: null,
         site: null,
-        facebook: null
+        facebook: null,
+        linkedin: "https://www.linkedin.com/company/main-ej/",
     },
     "#aedin": {
         image: "/entities/aedin-pixel.png",
         image_header: "/entities/small-aedin.png",
         titulo: "AEDIN",
-        text: "aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin aedin ",
+        text: "O AEDIN é a Associação de Egressos do Departamento de Informática (DIN), criada para manter a conexão permanente entre o departamento e seus ex-alunos. Seu objetivo é fortalecer esse vínculo institucional, promovendo a integração entre docentes e egressos. A partir dessa rede, busca-se gerar oportunidades de trabalho conjunto, projetos colaborativos e iniciativas acadêmicas e profissionais entre o DIN e seus egressos.",
         cor: "#0051B1",
         instagram: "https://www.instagram.com/aedin_uem/",
         discord: null,
         site: null,
-        facebook: null
+        facebook: null,
+        linkedin: 'https://www.linkedin.com/in/aedin-uem/',
     },
 }
