@@ -96,13 +96,13 @@ export const days: Day[] = [
   {
     id: "quarta",
     label: "DIA 11/03 (QUARTA - FEIRA)",
-    introText: "Explorando as fronteiras da tecnologia: de Astronomia Computacional a Desenvolvimento de Jogos.",
+    introText: "Explorando as fronteiras da tecnologia",
     periods: [
       {
         name: "MANHÃ",
         activities: [
           {
-            title: "PALESTRA: VISÃO COMPUTACIONAL NAS ESTRELAS",
+            title: "PALESTRAL",
             tags: ["Ciência da Computação"],
             time: "09:00 -> 11:00",
             location: "Anfiteatro do Bloco F-67",
@@ -114,7 +114,7 @@ export const days: Day[] = [
         name: "TARDE",
         activities: [
           {
-            title: "OFICINA DE SHADERS E GLSL",
+            title: "OFICINA",
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "14:00 -> 17:00",
             location: "Laboratório 05 - DIN",
@@ -133,11 +133,11 @@ export const days: Day[] = [
         name: "MANHÃ",
         activities: [
           {
-            title: "TREINAMENTO: MARATONA DE PROGRAMAÇÃO",
+            title: "CAMINHADA",
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "08:00 -> 12:00",
-            location: "Laboratório de Maratona",
-            description: "Dicas sobre algoritmos e estruturas de dados para quem deseja participar da fase regional da Maratona de Programação da SBC."
+            location: "C-56",
+            description: "Caça ao tesouro pela universidade."
           }
         ]
       },
@@ -145,7 +145,7 @@ export const days: Day[] = [
         name: "TARDE",
         activities: [
           {
-            title: "MINICURSO: ROBÓTICA COM ARDUINO",
+            title: "PALESTRA",
             tags: ["Ciência da Computação"],
             time: "13:30 -> 17:30",
             location: "Bloco C-34 - Sala 02",
@@ -164,11 +164,11 @@ export const days: Day[] = [
         name: "MANHÃ",
         activities: [
           {
-            title: "DEMO DAY: PROJETOS PET-INFORMÁTICA",
+            title: "INTEGRAÇÃO",
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "09:00 -> 11:30",
             location: "Sala do PET",
-            description: "Apresentação de sistemas desenvolvidos pelo grupo, como o site da SECOMP e o sistema hospitalar SIGAH."
+            description: "Integração entre os calouros."
           }
         ]
       },
@@ -176,11 +176,11 @@ export const days: Day[] = [
         name: "TARDE",
         activities: [
           {
-            title: "GAME JAM: TEMA OUTER WILDS",
+            title: "PALESTRA",
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "14:00 -> 18:00",
             location: "Laboratório 01 - DIN",
-            description: "Um desafio de 4 horas para criar uma pequena mecânica de jogo inspirada na exploração espacial e loops temporais."
+            description: "Um desafio de 4 horas."
           }
         ]
       },
@@ -192,7 +192,7 @@ export const days: Day[] = [
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "20:00 -> 00:00",
             location: "Associação de Funcionários UEM",
-            description: "Encerramento épico da semana com música (Alice in Chains no talo) e integração total entre veteranos e calouros."
+            description: "Encerramento épico da semana com música e integração total entre veteranos e calouros."
           }
         ]
       }

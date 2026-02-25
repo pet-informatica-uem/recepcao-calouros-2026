@@ -26,7 +26,6 @@ export default function RootLayout({
       >
         <CRTEffect />
         <>
-          <Header />
           {children}
         </>
       </body>
