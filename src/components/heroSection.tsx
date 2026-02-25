@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="flex items-center justify-center">
+    <section className="flex items-center justify-center pr-10">
       
       <div className="relative w-200 aspect-1400/730">
         

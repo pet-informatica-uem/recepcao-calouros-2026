@@ -20,10 +20,10 @@ export default function Home() {
     }
 
   return (
-    <div className="flex flex-col min-h-fill items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-col min-h-fill items-center justify-center font-sans">
       <Header abrirJanela={abrirJanela}/>
       <AreaJanelas entidades = {janelasAbertas} fecharJanela={fecharJanela}/>
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between gap-22 py-16 bg-white dark:bg-black sm:items-start">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center py-16 gap-20">
         <HeroSection/>
         <Desktop/>
       </main>
