@@ -1,7 +1,6 @@
 import { Html5QrcodeScanner } from "html5-qrcode";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
-// Props interface
 interface Html5QrcodePluginProps {
   fps?: number;
   qrbox?: number | { width: number; height: number };
@@ -14,66 +13,69 @@ interface Html5QrcodePluginProps {
 
 const QR_SCANNER_REGION_ID = "html5qr-code-full-region";
 
-const createConfig = (props: Html5QrcodePluginProps) => {
-  const config: any = {};
-  if (props.fps) config.fps = props.fps;
-  if (props.qrbox) config.qrbox = props.qrbox;
-  if (props.aspectRatio) config.aspectRatio = props.aspectRatio;
-  if (props.disableFlip !== undefined) config.disableFlip = props.disableFlip;
-  return config;
-};
-
-const QRScanner = (props: Html5QrcodePluginProps) => {
+export default function Html5QrcodePlugin(props: Html5QrcodePluginProps) {
   const scannerRef = useRef<Html5QrcodeScanner | null>(null);
-  const isMounted = useRef(true);
+
+  // callbacks atualizados sem reiniciar scanner
+  const successRef = useRef(props.qrCodeSuccessCallback);
+  const errorRef = useRef(props.qrCodeErrorCallback);
 
   useEffect(() => {
-    const startScanning = async () => {
-      const config = createConfig(props);
-      const verbose = props.verbose === true;
+    successRef.current = props.qrCodeSuccessCallback;
+    errorRef.current = props.qrCodeErrorCallback;
+  }, [props.qrCodeSuccessCallback, props.qrCodeErrorCallback]);
 
-      if (!props.qrCodeSuccessCallback) {
-        throw new Error("qrCodeSuccessCallback is a required callback.");
+  // só muda quando config “real” mudar
+  const config = useMemo(() => {
+    const c: any = {};
+    if (props.fps) c.fps = props.fps;
+    if (props.qrbox) c.qrbox = props.qrbox;
+    if (props.aspectRatio) c.aspectRatio = props.aspectRatio;
+    if (props.disableFlip !== undefined) c.disableFlip = props.disableFlip;
+    return c;
+  }, [props.fps, props.qrbox, props.aspectRatio, props.disableFlip]);
+
+  const verbose = props.verbose === true;
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const start = async () => {
+      // limpa scanner anterior (se existir)
+      if (scannerRef.current) {
+        try {
+          await scannerRef.current.clear();
+        } catch {}
+        scannerRef.current = null;
       }
 
-      const html5QrcodeScanner = new Html5QrcodeScanner(
-        QR_SCANNER_REGION_ID,
-        config,
-        verbose
+      // limpa DOM pra evitar duplicação
+      const el = document.getElementById(QR_SCANNER_REGION_ID);
+      if (el) el.innerHTML = "";
+
+      const scanner = new Html5QrcodeScanner(QR_SCANNER_REGION_ID, config, verbose);
+      scannerRef.current = scanner;
+
+      if (cancelled) return;
+
+      scanner.render(
+        (decodedText, result) => successRef.current(decodedText, result),
+        (msg, err) => errorRef.current?.(msg, err)
       );
-      console.log("Rendering html5QrcodeScanner...");
-      await html5QrcodeScanner.render(
-        props.qrCodeSuccessCallback,
-        props.qrCodeErrorCallback
-      );
-      return html5QrcodeScanner;
     };
 
-    const initScanner = async () => {
-      if (isMounted.current) {
-        scannerRef.current = await startScanning();
-      }
-    };
-
-    initScanner();
+    start();
 
     return () => {
-      isMounted.current = false;
-      const clearScanner = async () => {
-        try {
-          if (scannerRef.current) {
-            await scannerRef.current.clear();
-            scannerRef.current = null;
-          }
-        } catch (error) {
-          console.error("Failed to clear html5QrcodeScanner.", error);
-        }
-      };
-      clearScanner();
+      cancelled = true;
+      const current = scannerRef.current;
+      scannerRef.current = null;
+
+      current?.clear().catch(() => {});
+      const el = document.getElementById(QR_SCANNER_REGION_ID);
+      if (el) el.innerHTML = "";
     };
-  }, [props]);
+  }, [config, verbose]); // ✅ NÃO depende de props/callbacks
 
   return <div id={QR_SCANNER_REGION_ID} />;
-};
-
-export default QRScanner;
+}
