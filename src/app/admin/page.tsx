@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 
 import Html5QrcodePlugin from "@/src/components/Html5QrcodePlugin";
 
@@ -41,11 +41,13 @@ export default function ProtectedPage() {
 
   const [atividade, setAtividade] = useState<AtividadeId>(ATIVIDADES[0].id);
 
+  const qrBoxConfig = useMemo(() => ({ width: 250, height: 250 }), []);
+
   // trava por (atividade + codigo)
   const lastScannedRef = useRef<string | null>(null);
 
-  const correctUsername = "admin"; // Change to your desired username
-  const correctPassword = "pet1235"; // Change to your desired password
+  const correctUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+  const correctPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,6 +66,15 @@ export default function ProtectedPage() {
     }
   };
 
+  const onScanSuccess = (decodedText: string) => {
+    const key = `${atividade}:${decodedText}`;
+    if (lastScannedRef.current === key) return;
+
+    lastScannedRef.current = key;
+    registraPresenca(decodedText, password, atividade);
+  };
+
+  
   useEffect(() => {
     const auth = localStorage.getItem("auth");
     if (auth) {
@@ -82,13 +93,6 @@ export default function ProtectedPage() {
   }, []);
 
   if (isAuthenticated) {
-    const onScanSuccess = (decodedText: string) => {
-      const key = `${atividade}:${decodedText}`;
-      if (lastScannedRef.current === key) return;
-
-      lastScannedRef.current = key;
-      registraPresenca(decodedText, password, atividade);
-    };
     const onScanError = () => {};
 
     return (
@@ -100,8 +104,6 @@ export default function ProtectedPage() {
             value={atividade}
             onChange={(e) => {
               setAtividade(e.target.value as AtividadeId);
-              // opcional: liberar novo scan ao trocar atividade
-              lastScannedRef.current = null;
             }}
           >
             {ATIVIDADES.map((a) => (
@@ -114,11 +116,9 @@ export default function ProtectedPage() {
 
         <Html5QrcodePlugin
           fps={10}
-          qrbox={{ width: 250, height: 250 }}
+          qrbox={qrBoxConfig}
           disableFlip={false}
-          verbose={false}
-          qrCodeSuccessCallback={onScanSuccess}
-          qrCodeErrorCallback={onScanError}
+          qrCodeSuccessCallback={onScanSuccess} // O plugin usará successRef.current
         />
       </div>
     );
@@ -136,21 +136,23 @@ export default function ProtectedPage() {
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div className="mb-2 ">
-          <label className="text-l text-white">Username: </label>
+          <label className="text-lg text-white">Username: </label>
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            className="rounded bg-white text-black outline-none focus:ring-2 focus:ring-blue-500"
             />
         </div>
         <div className="mb-2 ">
-          <label className="text-l text-white">Password: </label>
+          <label className="text-lg text-white">Password: </label>
           <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className="rounded bg-white text-black outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <button

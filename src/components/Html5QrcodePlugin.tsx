@@ -38,42 +38,38 @@ export default function Html5QrcodePlugin(props: Html5QrcodePluginProps) {
   const verbose = props.verbose === true;
 
   useEffect(() => {
-    let cancelled = false;
+    let isMounted = true;
+    const scanner = new Html5QrcodeScanner(QR_SCANNER_REGION_ID, config, verbose);
 
-    const start = async () => {
-      // limpa scanner anterior (se existir)
-      if (scannerRef.current) {
-        try {
-          await scannerRef.current.clear();
-        } catch {}
-        scannerRef.current = null;
+    const startScanner = async () => {
+      try {
+        // Pequena pausa para garantir que o navegador liberou o DOM
+        await new Promise((r) => setTimeout(r, 100));
+        
+        const container = document.getElementById(QR_SCANNER_REGION_ID);
+        if (!container || !isMounted) return;
+
+        // Limpa o lixo interno antes de renderizar
+        container.innerHTML = "";
+
+        scanner.render(
+          (decodedText, result) => successRef.current(decodedText, result),
+          (msg, err) => errorRef.current?.(msg, err)
+        );
+        scannerRef.current = scanner;
+      } catch (err) {
+        console.error("Erro ao iniciar o scanner:", err);
       }
-
-      // limpa DOM pra evitar duplicação
-      const el = document.getElementById(QR_SCANNER_REGION_ID);
-      if (el) el.innerHTML = "";
-
-      const scanner = new Html5QrcodeScanner(QR_SCANNER_REGION_ID, config, verbose);
-      scannerRef.current = scanner;
-
-      if (cancelled) return;
-
-      scanner.render(
-        (decodedText, result) => successRef.current(decodedText, result),
-        (msg, err) => errorRef.current?.(msg, err)
-      );
     };
 
-    start();
+    startScanner();
 
     return () => {
-      cancelled = true;
-      const current = scannerRef.current;
-      scannerRef.current = null;
-
-      current?.clear().catch(() => {});
-      const el = document.getElementById(QR_SCANNER_REGION_ID);
-      if (el) el.innerHTML = "";
+      isMounted = false;
+      if (scannerRef.current) {
+        scannerRef.current.clear().catch((e) => console.warn("Erro no clear:", e));
+        scannerRef.current = null;
+      }
     };
   }, [config, verbose]); // ✅ NÃO depende de props/callbacks
 
