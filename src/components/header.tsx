@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DADOSENTIDADES, entidadeKey } from "../app/dadosJanelas";
+import { SiGoogleforms } from "@icons-pack/react-simple-icons";
 
 export function Clock() {
   const [time, setTime] = useState<string>("");
@@ -27,14 +28,14 @@ export function Clock() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <>
-      {time}
-    </>
-  );
+  return <>{time}</>;
 }
 
-export default function Header({abrirJanela}: {abrirJanela: (id: entidadeKey) => void}) {
+export default function Header({
+  abrirJanela,
+}: {
+  abrirJanela: (id: entidadeKey) => void;
+}) {
   return (
     <header
       id="inicio"
@@ -44,15 +45,17 @@ export default function Header({abrirJanela}: {abrirJanela: (id: entidadeKey) =>
         <div className="flex items-center justify-between gap-4">
           {/* Start Button */}
           <Link href="/#home">
-            <div className="flex items-center justify-center gap-2 color-black p-2 font-black text-3xl
+            <div
+              className="flex items-center justify-center gap-2 color-black p-2 font-black text-3xl
                             border-3 border-t-neutral-200 border-l-neutral-200 border-r-black border-b-black
-                            hover:border-b-neutral-200 hover:border-r-neutral-200 hover:border-l-black hover:border-t-black hover:bg-gray-200">
+                            hover:border-b-neutral-200 hover:border-r-neutral-200 hover:border-l-black hover:border-t-black hover:bg-gray-200"
+            >
               <Image
-              src={"/logo/start-logo.png"}
-              width={390}
-              height={290}
-              alt="Logo da Recepção de Calouros"
-              className="max-w-11 mx-auto"
+                src={"/logo/start-logo.png"}
+                width={390}
+                height={290}
+                alt="Logo da Recepção de Calouros"
+                className="max-w-11 mx-auto"
               />
               Start
             </div>
@@ -64,8 +67,13 @@ export default function Header({abrirJanela}: {abrirJanela: (id: entidadeKey) =>
               <ul className="flex justify-around md:justify-center">
                 {Object.entries(DADOSENTIDADES).map(([chave, dados]) => (
                   <li key={chave}>
-                    <div onClick={() => {abrirJanela(chave as entidadeKey)}} className="p-2 border-3 border-white cursor-pointer
-                          hover:border-b-neutral-200 hover:border-r-neutral-200 hover:border-l-black hover:border-t-black hover:bg-gray-200">
+                    <div
+                      onClick={() => {
+                        abrirJanela(chave as entidadeKey);
+                      }}
+                      className="p-2 border-3 border-white cursor-pointer
+                          hover:border-b-neutral-200 hover:border-r-neutral-200 hover:border-l-black hover:border-t-black hover:bg-gray-200"
+                    >
                       <Image
                         src={dados.image_header}
                         width={350}
@@ -80,7 +88,25 @@ export default function Header({abrirJanela}: {abrirJanela: (id: entidadeKey) =>
             </nav>
           </div>
           <div className="bg-black h-14 w-0.5 border-r-2"></div>
-      </div>
+          <div className="flex justify content-betweenp-2 border-3 border-white cursor-pointer hover:border-b-neutral-200 hover:border-r-neutral-200 hover:border-l-black hover:border-t-black hover:bg-gray-200 px-1 py-3">
+            <a
+              href="https://forms.gle/k7DCVtbmeCjv1GjQ8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3"
+            >
+              <SiGoogleforms
+                size={40}
+                strokeWidth={3}
+                style={{ shapeRendering: "crispEdges" }}
+              />
+              <span className="text-2xl font-medium">
+                {" "}
+                Inscreva-se no Forms
+              </span>
+            </a>
+          </div>
+        </div>
 
         <div className="flex items-center gap-4">
           <div className="bg-black h-14 w-0.5 border-r-2"></div>
@@ -88,7 +114,6 @@ export default function Header({abrirJanela}: {abrirJanela: (id: entidadeKey) =>
             <Clock />
           </div>
         </div>
-
       </div>
     </header>
   );
