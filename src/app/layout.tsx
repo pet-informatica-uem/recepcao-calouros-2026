@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Jersey_20 } from "next/font/google";
 import Header from "../components/header";
 import "./globals.css";
-import { CRTEffect } from "../components/crtEffect";
+import CRTController from "../components/crtController";
 
 const jersey = Jersey_20({
   weight: '400',
@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${jersey.className} antialiased`}
       >
-        <CRTEffect />
+        <CRTController />
         <>
           {children}
         </>
