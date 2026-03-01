@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Jersey_20 } from "next/font/google";
-import Header from "../components/header";
+import Footer from "../components/footer";
 import "./globals.css";
 import CRTController from "../components/crtController";
 
@@ -28,6 +28,7 @@ export default function RootLayout({
         <>
           {children}
         </>
+        <Footer/>
       </body>
     </html>
   );
