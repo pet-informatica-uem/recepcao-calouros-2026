@@ -3,9 +3,10 @@ import Image from "next/image";
 type DesktopIconProps = {
   label: string;
   onClick: () => void;
+  isActive?: boolean;
 };
 
-export default function DesktopIcon({ label, onClick }: DesktopIconProps) {
+export default function DesktopIcon({ label, onClick, isActive }: DesktopIconProps) {
   return (
     <button
       onClick={onClick}
@@ -13,7 +14,7 @@ export default function DesktopIcon({ label, onClick }: DesktopIconProps) {
     >
       <div className="w-16 h-16 flex items-center justify-center font-bold">
         <Image
-        src="/file-black.png"
+        src={isActive ? "/file-blue.png" : "/file-black.png"}
         alt="Ícone de arquivo de texto"
         width={460}
         height={570}
