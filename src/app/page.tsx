@@ -26,10 +26,10 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-fill items-center justify-center font-sans">
       <Header abrirJanela={abrirJanela}/>
-      <AreaJanelas entidades = {janelasAbertas} fecharJanela={fecharJanela} focarJanela={focarJanela}/>
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center py-16 gap-20">
         <HeroSection/>
         <Desktop/>
+        <AreaJanelas entidades = {janelasAbertas} fecharJanela={fecharJanela} focarJanela={focarJanela}/>
       </main>
     </div>
   );

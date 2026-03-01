@@ -9,7 +9,7 @@ export default function Desktop() {
   const selectedDay = days.find((d) => d.id === activeWindow);
 
   return (
-    <div className="flex flex-col items-center w-full min-h-screen p-4">
+    <div className="flex flex-col items-center w-full  p-4">
       {/* Grid responsivo: 3 colunas no mobile, 5 no desktop */}
       <div className="flex flex-wrap justify-center gap-6 md:gap-12 w-full max-w-5xl mb-8 md:mb-16">
         {days.map((day) => (
