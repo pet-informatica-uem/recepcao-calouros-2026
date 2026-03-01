@@ -30,7 +30,7 @@ export default function Desktop() {
             <div className="flex flex-col items-center">
               <Window title={selectedDay.label} onClose={() => setActiveWindow(null)}>
                 <div className="flex flex-col space-y-8 md:space-y-12 text-center">
-                  <p className="text-justify px-2 md:px-4 text-sm md:text-base">
+                  <p className="text-justify px-2 md:px-4 text-base md:text-lg">
                     {selectedDay.introText}
                   </p>
 
@@ -38,7 +38,7 @@ export default function Desktop() {
                     <div key={period.name} className="space-y-6 md:space-y-10">
                       <div className="relative flex items-center justify-center mb-4 md:mb-8">
                         <div className="absolute w-full border-t-2 border-dashed border-white"></div>
-                        <h2 className="relative bg-black px-4 md:px-10 text-xl md:text-3xl font-black tracking-widest md:tracking-[0.3em] uppercase">
+                        <h2 className="relative bg-black px-4 md:px-10 text-xl md:text-2xl font-black tracking-widest md:tracking-[0.3em] uppercase">
                           <span className="border-b-2 border-dashed border-white pb-1">
                             {period.name}
                           </span>
@@ -55,18 +55,18 @@ export default function Desktop() {
                             {/* Tags flexíveis */}
                             <div className="flex flex-wrap justify-center gap-2 md:gap-4">
                               {act.tags.map((tag) => (
-                                <span key={tag} className="border border-white px-3 py-1 text-xs md:text-sm font-bold uppercase bg-black text-white">
+                                <span key={tag} className="border border-white px-3 py-1 text-base font-bold uppercase bg-black text-white">
                                   {tag}
                                 </span>
                               ))}
                             </div>
 
-                            <div className="font-bold border-white py-2 md:py-3 w-full max-w-sm text-sm md:text-base">
+                            <div className="font-bold border-white py-2 md:py-3 w-full max-w-sm text-lg md:text-xl">
                               <p>HORÁRIO: {act.time}</p>
                               <p>LOCAL: {act.location}</p>
                             </div>
 
-                            <p className="text-justify text-sm md:text-base">
+                            <p className="text-justify px-2 md:px-4 text-base md:text-lg">
                               {act.description}
                             </p>
                           </div>

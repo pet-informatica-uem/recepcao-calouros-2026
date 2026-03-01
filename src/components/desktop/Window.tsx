@@ -12,7 +12,7 @@ export default function Window({ title, children, onClose }: WindowProps) {
 
       <div className="bg-black border-2 md:border-4 border-white">
         <div className="flex justify-between items-center bg-white text-black px-4 py-2">
-          <span className="font-bold uppercase text-[10px] md:text-xs tracking-widest">{title}</span>
+          <span className="font-bold uppercase text-lg md:text-2xl tracking-widest">{title}</span>
           <button onClick={onClose} className="cursor-pointer text-2xl md:text-3xl leading-none">×</button>
         </div>
 
