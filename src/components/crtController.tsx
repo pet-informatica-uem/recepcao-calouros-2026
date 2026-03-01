@@ -9,11 +9,25 @@ export default function CRTController() {
     <>
       {enabled && <CRTEffect />}
 
-      <button onClick={() => setEnabled((v) => !v)} className="cursor-pointer absolute right-2 top-24 sm:right-4 sm:top-28 md:right-6 md:top-32">
-        <div className="flex items-center gap-2 sm:gap-3 border border-white/15 bg-black px-2 py-2 sm:px-3 sm:py-2 transition">
-          <div className={`relative h-4 w-8 sm:h-5 sm:w-10 transition ${enabled ? "bg-blue" : "bg-white/50"}`}>
-            <span className={`absolute top-1/2 -translate-y-1/2 h-full w-4 sm:w-5 bg-white transition-all duration-200 ${enabled ? "left-4 sm:left-5" : "left-0"}`}/>
-          </div>
+      <button 
+        onClick={() => setEnabled((v) => !v)} 
+        className="fixed z-50 flex items-center gap-3 group right-4 top-24 sm:right-6 sm:top-28 md:right-8 md:top-32 hover:opacity-80 transition-opacity cursor-pointer"
+      >
+
+        {/* Trilho do Switch */}
+        <div className={`relative w-12 h-6 md:w-14 md:h-7 p-1 border-2 border-white transition-colors duration-200
+          ${enabled ? "bg-blue" : "bg-black"} 
+        `}>
+          <div className={`h-full w-4 md:w-5 bg-white transition-all duration-200 ease-in-out transform
+            ${enabled ? "translate-x-5 md:translate-x-6" : "translate-x-0"}
+          `} />
+          
+          {!enabled && (
+            <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1">
+              <div className="w-1 h-1 bg-white/30" />
+              <div className="w-1 h-1 bg-white/30" />
+            </div>
+          )}
         </div>
       </button>
     </>
