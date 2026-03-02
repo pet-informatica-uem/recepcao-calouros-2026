@@ -30,8 +30,8 @@ export default function Home() {
       <Header abrirJanela={abrirJanela} />
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center pb-16 gap-20">
         <HeroSection />
-        <Inscricao />
         <Desktop />
+        <Inscricao />
         <AreaJanelas
           entidades={janelasAbertas}
           fecharJanela={fecharJanela}

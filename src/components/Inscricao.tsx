@@ -4,8 +4,7 @@ export default function Inscricao() {
   return (
     <div className="flex flex-col items-center text-center space-y-7">
       <span className="text-2xl">
-        Se inscreva no formulario para ganhar Atividade Acadêmica Complementar
-        (AAC)
+        Inscreva-se no formulário para ganhar Atividades Acadêmicas Complementares (AAC's)
       </span>
       <div className="w-fit flex justify content-betweenp-2 border-3 border-white cursor-pointer hover:bg-white px-1 py-3 hover:text-black hover:border-black">
         <a
@@ -22,7 +21,7 @@ export default function Inscricao() {
           <span className="text-2xl font-medium"> Inscreva-se no Forms</span>
         </a>
       </div>
-      <span className="text-2xl">
+      {/* <span className="text-2xl">
         Mantenha-se informado no instagram do{" "}
         <a
           href="https://www.instagram.com/din__uem/"
@@ -32,7 +31,7 @@ export default function Inscricao() {
         >
           Departamento de Informática (DIN)
         </a>
-      </span>
+      </span> */}
     </div>
   );
 }

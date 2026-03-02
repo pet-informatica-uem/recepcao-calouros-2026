@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="relative flex items-center justify-center w-full min-h-125 py-10 overflow-x-hidden">
+    <section id="home" className="relative flex items-center justify-center w-full min-h-125 py-10 overflow-x-hidden">
       
       <div className="relative w-[90%] max-w-250 aspect-1400/800 md:aspect-1400/730 mx-auto">
         
