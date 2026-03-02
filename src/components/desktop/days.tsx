@@ -22,29 +22,31 @@ export const days: Day[] = [
   {
     id: "segunda",
     label: "DIA 09/03 (SEGUNDA - FEIRA)",
-    introText: "Abertura oficial da Recepção de Calouros UEM 2026. Um momento de integração com a Pró-Reitoria e apresentações culturais no Bloco C-34.",
+    introText: "Na segunda-feira, a UEM realizará a Calourada 2026, resultado de parceria das pró-reitorias de Ensino (PEN) e de Extensão e Cultura (PEC), por meio da Diretoria de Cultura (DCU), com o Diretório Central de Estudantes (DCE). O evento contará com a realização de atividades culturais e artísticas.",
     periods: [
       {
         name: "MANHÃ",
         activities: [
           {
-            title: "CAFÉ COM PET E EGRESSOS",
-            tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "08:00 -> 10:00",
-            location: "Bloco C-34 - Anfiteatro",
-            description: "Um café da manhã especial organizado pelo PET-Informática para recepcionar os novos alunos e alinhar expectativas com egressos do curso."
-          }
-        ]
-      },
-      {
-        name: "TARDE",
-        activities: [
-          {
-            title: "VISITA AOS LABORATÓRIOS",
+            title: "BATERIAS E ATLÉTICAS",
             tags: ["Ciência da Computação"],
-            time: "14:00 -> 17:30",
-            location: "DIN - Departamento de Informática",
-            description: "Tour guiado pelos laboratórios de pesquisa, incluindo as áreas de Processamento Digital de Imagens e Computação Visual."
+            time: "08:00 -> 08:30",
+            location: "Em frente ao Restaurante Universitário (RU)",
+            description: "Recepção animada com as baterias e atléticas dos cursos."
+          },
+          {
+            title: "INÍCIO DO CERIMONIAL",
+            tags: ["Ciência da Computação"],
+            time: "08:30 -> 09:00",
+            location: "Restaurante Universitário (RU)",
+            description: "Abertura oficial da Calourada 2026 da UEM, com falas institucionais e Boas-vindas do Reitor, Vice-reitora, DEG, DCU e DCE."
+          },
+          {
+            title: "APRESENTAÇÃO CULTURAL E CAFÉ DA MANHÃ",
+            tags: ["Ciência da Computação"],
+            time: "09:00",
+            location: "Restaurante Universitário (RU)",
+            description: "Momento cultural seguido de um café da manhã para promover integração entre os estudantes."
           }
         ]
       },
@@ -52,11 +54,25 @@ export const days: Day[] = [
         name: "NOITE",
         activities: [
           {
-            title: "PALESTRA: O UNIVERSO DA COMPUTAÇÃO",
-            tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "19:30 -> 22:00",
-            location: "Auditório Central",
-            description: "Uma conversa sobre as diversas áreas de atuação, desde Backend com Java até a criação de Shaders e Computação Gráfica."
+            title: "BATERIAS E ATLÉTICAS",
+            tags: ["Engenharia de Software"],
+            time: "19:00 -> 19:30",
+            location: "Em frente ao Restaurante Universitário (RU)",
+            description: "Recepção noturna com as baterias e atléticas dos cursos."
+          },
+          {
+            title: "INÍCIO DO CERIMONIAL",
+            tags: ["Engenharia de Software"],
+            time: "19:30 -> 20:00",
+            location: "Restaurante Universitário (RU)",
+            description: "Abertura oficial da Calourada 2026 da UEM, com falas institucionais e Boas-vindas do Reitor, Vice-reitora, DEG, DCU e DCE."
+          },
+          {
+            title: "APRESENTAÇÃO CULTURAL E LANCHE",
+            tags: ["Engenharia de Software"],
+            time: "20:00",
+            location: "Restaurante Universitário (RU)",
+            description: "Momento cultural seguido de um lanche para promover integração entre os estudantes."
           }
         ]
       }
@@ -65,29 +81,57 @@ export const days: Day[] = [
   {
     id: "terça",
     label: "DIA 10/03 (TERÇA - FEIRA)",
-    introText: "Dia focado em ferramentas essenciais e o ecossistema de desenvolvimento que você usará durante a graduação.",
+    introText: "Na terça-feira, os calouros conhecerão mais profundamente o Departamento de Informática, seus cursos, estrutura e oportunidades acadêmicas.",
     periods: [
-      {
-        name: "MANHÃ",
-        activities: [
-          {
-            title: "WORKSHOP: SOBREVIVENDO AO LINUX",
-            tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "08:20 -> 11:50",
-            location: "Laboratório 01 - DIN",
-            description: "Aprenda a dominar o terminal, instalar pacotes e configurar seu ambiente de desenvolvimento para as disciplinas de programação."
-          }
-        ]
-      },
       {
         name: "TARDE",
         activities: [
           {
-            title: "INTRODUÇÃO AO GIT E GITHUB",
+            title: "APRESENTAÇÃO DO DEPARTAMENTO DE INFORMÁTICA",
+            tags: ["Ciência da Computação"],
+            time: "13:30 -> 14:30",
+            location: "Bloco C56 - DIN",
+            description: "Apresentação institucional do Departamento de Informática (DIN), abordando sua estrutura, projetos, laboratórios, áreas de pesquisa e funcionamento acadêmico."
+          },
+          {
+            title: "APRESENTAÇÃO DO CURSO DE CIÊNCIA DA COMPUTAÇÃO",
+            tags: ["Ciência da Computação"],
+            time: "14:30 -> 15:30",
+            location: "Bloco C56 - DIN",
+            description: "Detalhamento da grade curricular, oportunidades acadêmicas, projetos de extensão e pesquisa, além de orientações importantes para os novos estudantes do curso."
+          },
+          {
+            title: "COFFEE BREAK",
+            tags: ["Ciência da Computação"],
+            time: "15:30 -> 16:30",
+            location: "Bloco C56 - DIN",
+            description: "☕☕☕"
+          }
+        ]
+      },
+      {
+        name: "NOITE",
+        activities: [
+          {
+            title: "APRESENTAÇÃO DO DEPARTAMENTO DE INFORMÁTICA",
             tags: ["Engenharia de Software"],
-            time: "13:30 -> 15:30",
-            location: "Laboratório 03 - DIN",
-            description: "Workshop prático sobre controle de versão, essencial para projetos em equipe e participação em Iniciativa Científica."
+            time: "19:30 -> 20:30",
+            location: "Bloco C56 - DIN",
+            description: "Apresentação institucional do Departamento de Informática (DIN), abordando sua estrutura, projetos, laboratórios, áreas de pesquisa e funcionamento acadêmico."
+          },
+          {
+            title: "APRESENTAÇÃO DO CURSO DE ENGENHARIA DE SOFTWARE",
+            tags: ["Engenharia de Software"],
+            time: "20:30 -> 21:30",
+            location: "Bloco C56 - DIN",
+            description: "Detalhamento da grade curricular, oportunidades acadêmicas, projetos de extensão e pesquisa, além de orientações importantes para os novos estudantes do curso"
+          },
+          {
+            title: "COFFEE BREAK",
+            tags: ["Engenharia de Software"],
+            time: "21:30 -> 22:30",
+            location: "Bloco C56 - DIN",
+            description: "☕☕☕"
           }
         ]
       }
@@ -96,29 +140,29 @@ export const days: Day[] = [
   {
     id: "quarta",
     label: "DIA 11/03 (QUARTA - FEIRA)",
-    introText: "Explorando as fronteiras da tecnologia",
+    introText: "Na quarta-feira, a UEM continuará as atividades da Calourada 2026, dedicada à integração geral dos estudantes com a comunidade universitária.",
     periods: [
       {
         name: "MANHÃ",
         activities: [
           {
-            title: "PALESTRAL",
+            title: "FEIRA DE BOAS VINDAS",
             tags: ["Ciência da Computação"],
-            time: "09:00 -> 11:00",
-            location: "Anfiteatro do Bloco F-67",
-            description: "Como algoritmos de processamento de imagem são usados para detectar exoplanetas e analisar manchas solares em grandes datasets astronômicos."
+            time: "10:00 -> 13:00",
+            location: "Estacionamentos do RU e BCE",
+            description: "Feira de Boas Vindas com atrações artísticas, muita diversão e food trucks!"
           }
         ]
       },
       {
-        name: "TARDE",
+        name: "NOITE",
         activities: [
           {
-            title: "OFICINA",
-            tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "14:00 -> 17:00",
-            location: "Laboratório 05 - DIN",
-            description: "Aprenda os fundamentos da pipeline gráfica e como criar efeitos visuais incríveis utilizando a linguagem GLSL."
+            title: "FEIRA DE BOAS VINDAS",
+            tags: ["Engenharia de Software"],
+            time: "16:00 -> 22:00",
+            location: "Estacionamentos do RU e BCE",
+            description: "Feira de Boas Vindas com atrações artísticas, muita diversão e food trucks!"
           }
         ]
       }
@@ -127,29 +171,36 @@ export const days: Day[] = [
   {
     id: "quinta",
     label: "DIA 12/03 (QUINTA - FEIRA)",
-    introText: "Desafios e Competições. Prepare seu raciocínio lógico para o maior evento de programação da semana.",
+    introText: "Na quinta-feira, os estudantes conhecerão os programas acadêmicos e participarão de atividades práticas voltadas à área da computação.",
     periods: [
-      {
-        name: "MANHÃ",
-        activities: [
-          {
-            title: "CAMINHADA",
-            tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "08:00 -> 12:00",
-            location: "C-56",
-            description: "Caça ao tesouro pela universidade."
-          }
-        ]
-      },
       {
         name: "TARDE",
         activities: [
           {
-            title: "PALESTRA",
+            title: "MESA REDONDA DE APRESENTAÇÃO DOS PROGRAMAS",
             tags: ["Ciência da Computação"],
-            time: "13:30 -> 17:30",
-            location: "Bloco C-34 - Sala 02",
-            description: "Mão na massa com hardware: entenda como integrar sensores e atuadores usando C++ para criar robôs autônomos."
+            time: "13:30 -> 15:30",
+            location: "Bloco C56 - DIN",
+            description: "Mesa redonda com representantes de programas acadêmicos (CACCOM, Main, PET, Conectadas, RoboDIN, Enactus, Atlética e IEEE), apresentando oportunidades de participação ao longo da graduação."
+          },
+          {
+            title: "WORKSHOP DE LINUX E SEU TERMINAL",
+            tags: ["Ciência da Computação", "Engenharia de Software"],
+            time: "15:30 -> 17:30",
+            location: "Bloco C56 - DIN",
+            description: "Workshop introdutório sobre o sistema Linux e utilização do terminal, apresentando comandos básicos, organização de arquivos e noções fundamentais para o dia a dia acadêmico na área de tecnologia. O Workshop será realizado pelo programa PET-Informática."
+          }
+        ]
+      },
+      {
+        name: "NOITE",
+        activities: [
+          {
+            title: "MESA REDONDA DE APRESENTAÇÃO DOS PROGRAMAS",
+            tags: ["Engenharia de Software"],
+            time: "19:30 -> 21:30",
+            location: "Bloco C56 - DIN",
+            description: "Mesa redonda com representantes de programas acadêmicos (CAINFO, Main, PET, Conectadas, RoboDIN, Enactus, Atlética e IEEE), apresentando oportunidades de participação ao longo da graduação."
           }
         ]
       }
@@ -158,29 +209,17 @@ export const days: Day[] = [
   {
     id: "sexta",
     label: "DIA 13/03 (SEXTA - FEIRA)",
-    introText: "Encerramento da semana com foco em projetos pessoais, comunidade acadêmica e diversão.",
+    introText: "Sextou com o encerrando a semana de recepção, o dia será dedicado à integração dos novos estudantes.",
     periods: [
-      {
-        name: "MANHÃ",
-        activities: [
-          {
-            title: "INTEGRAÇÃO",
-            tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "09:00 -> 11:30",
-            location: "Sala do PET",
-            description: "Integração entre os calouros."
-          }
-        ]
-      },
       {
         name: "TARDE",
         activities: [
           {
-            title: "PALESTRA",
+            title: "CAMINHADA",
             tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "14:00 -> 18:00",
-            location: "Laboratório 01 - DIN",
-            description: "Um desafio de 4 horas."
+            time: "14:30 -> 17:30",
+            location: "Bloco C56 - DIN",
+            description: "A comissão de recepção realizará uma caminhada por alguns pontos característicos da UEM, com enigmas e jogos para integração dos novos calouros."
           }
         ]
       },
@@ -188,11 +227,11 @@ export const days: Day[] = [
         name: "NOITE",
         activities: [
           {
-            title: "CHURRASCO DE INTEGRAÇÃO",
+            title: "INTEGRAÇÃO",
             tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "20:00 -> 00:00",
-            location: "Associação de Funcionários UEM",
-            description: "Encerramento épico da semana com música e integração total entre veteranos e calouros."
+            time: "19:30 -> 22:30",
+            location: "Bloco C56 - DIN",
+            description: "À noite a comissão da recepção preparará o departamento para sediar uma série de enigmas para serem desvendados e resolvidos em conjunto pelos calouros."
           }
         ]
       }
