@@ -52,10 +52,7 @@ export default function Header({
   }, []);
 
   return (
-    <header
-      id="inicio"
-      className="flex sticky top-0 z-50 text-black w-full flex-col"
-    >
+    <header className="flex sticky top-0 z-50 text-black w-full flex-col">
       <div className="w-full flex items-center justify-between px-4 py-2 md:py-1 bg-white relative">
         <div className="flex items-center justify-between gap-4">
           {/* Start Button */}
@@ -76,22 +73,26 @@ export default function Header({
               Start
             </div>
           ) : (
-            <Link href="/#home">
-              <div
-                className="flex items-center justify-center gap-2 p-2 font-black text-3xl
-                border-3 border-t-neutral-200 border-l-neutral-200 border-r-black border-b-black
-                hover:border-b-neutral-200 hover:border-r-neutral-200 hover:border-l-black hover:border-t-black hover:bg-gray-200"
-              >
-                <Image
-                  src={"/logo/start-logo.png"}
-                  width={390}
-                  height={290}
-                  alt="Logo"
-                  className="max-w-11 mx-auto"
-                />
-                Start
-              </div>
-            </Link>
+            <div
+            onClick={() =>
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              })
+            }
+              className="flex items-center justify-center gap-2 p-2 font-black text-3xl
+              border-3 border-t-neutral-200 border-l-neutral-200 border-r-black border-b-black
+              hover:border-b-neutral-200 hover:border-r-neutral-200 hover:border-l-black hover:border-t-black hover:bg-gray-200"
+            >
+              <Image
+                src={"/logo/start-logo.png"}
+                width={390}
+                height={290}
+                alt="Logo"
+                className="max-w-11 mx-auto"
+              />
+              Start
+            </div>
           )}
 
           <div className="bg-black h-14 w-0.5 border-r-2"></div>
