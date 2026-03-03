@@ -186,7 +186,7 @@ export const days: Day[] = [
           {
             title: "WORKSHOP DE LINUX E SEU TERMINAL",
             tags: ["Ciência da Computação", "Engenharia de Software"],
-            time: "15:30 -> 17:30",
+            time: "15:45 -> 17:30",
             location: "Bloco C56 - DIN",
             description: "Workshop introdutório sobre o sistema Linux e utilização do terminal, apresentando comandos básicos, organização de arquivos e noções fundamentais para o dia a dia acadêmico na área de tecnologia. O Workshop será realizado pelo programa PET-Informática."
           }
