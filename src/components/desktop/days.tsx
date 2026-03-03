@@ -209,11 +209,18 @@ export const days: Day[] = [
   {
     id: "sexta",
     label: "DIA 13/03 (SEXTA - FEIRA)",
-    introText: "Sextou com o encerrando a semana de recepção, o dia será dedicado à integração dos novos estudantes.",
+    introText: "Sextou com o encerramento da semana de recepção, o dia será dedicado à integração dos novos estudantes.",
     periods: [
       {
         name: "TARDE",
         activities: [
+          {
+            title: "VIR, VER E VENCER! OS SEGREDOS DE COMO ENFRENTAR OS CURSOS DE GRADUAÇÃO DO DIN",
+            tags: ["Ciência da Computação", "Engenharia de Software"],
+            time: "13:30 -> 14:30",
+            location: "Bloco C56 - DIN",
+            description: "Palestra do Prof. Dr. Alisson Svaigen sobre a jornada na UEM, abordando desafios, dicas e a importância da resiliência ao longo do curso."
+          },
           {
             title: "CAMINHADA",
             tags: ["Ciência da Computação", "Engenharia de Software"],
