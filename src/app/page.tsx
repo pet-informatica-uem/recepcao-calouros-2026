@@ -6,6 +6,8 @@ import AreaJanelas from "../components/areaJanelas";
 import { useState } from "react";
 import { entidadeKey } from "./dadosJanelas";
 import Inscricao from "../components/Inscricao";
+import Footer from "../components/footer";
+import CRTController from "../components/crtController";
 
 export default function Home() {
   const [janelasAbertas, setJanelasAbertas] = useState<entidadeKey[]>([]);
@@ -27,6 +29,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-fill items-center justify-center font-sans">
+      <CRTController />
       <Header abrirJanela={abrirJanela} />
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center pb-16 gap-20">
         <HeroSection />
@@ -38,6 +41,7 @@ export default function Home() {
           focarJanela={focarJanela}
         />
       </main>
+      <Footer/>
     </div>
   );
 }

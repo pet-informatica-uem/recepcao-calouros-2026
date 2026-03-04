@@ -7,7 +7,11 @@ import Html5QrcodePlugin from "@/src/components/Html5QrcodePlugin";
 const ATIVIDADES = [
   { id: "apresentacao-tarde", label: "Apresentação de Depto. e Curso (tarde)" },
   { id: "apresentacao-noite", label: "Apresentação de Depto. e Curso (noite)" },
+  { id: "mesa-redonda-tarde", label: "Mesa Redonda (tarde)"},
+  { id: "mesa-redonda-noite", label: "Mesa Redonda (noite)"},
+  { id: "workshop-linux", label: "Workshop de Linux"},
   { id: "caminhada", label: "Caminhada" },
+  { id: "integracao", label: "Integração"},
 ] as const;
 
 type AtividadeId = (typeof ATIVIDADES)[number]["id"];
