@@ -10,6 +10,7 @@ const ATIVIDADES = [
   { id: "mesa-redonda-tarde", label: "Mesa Redonda (tarde)"},
   { id: "mesa-redonda-noite", label: "Mesa Redonda (noite)"},
   { id: "workshop-linux", label: "Workshop de Linux"},
+  { id: "palestra", label: "Palestra" },
   { id: "caminhada", label: "Caminhada" },
   { id: "integracao", label: "Integração"},
 ] as const;
