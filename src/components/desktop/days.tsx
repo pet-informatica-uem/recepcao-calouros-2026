@@ -51,6 +51,18 @@ export const days: Day[] = [
         ]
       },
       {
+        name: "TARDE",
+        activities: [
+          {
+            title: "APADRINHAMENTO DE CALOUROS",
+            tags: ["Ciência da Computação"],
+            time: "13:30",
+            location: "Bloco C56 - DIN",
+            description: "Apadrinhamento dos calouros de Ciência da Computação realizado pelo Centro Acadêmico de Ciência da Computação (CACCOM)."
+          }
+        ]
+      },
+      {
         name: "NOITE",
         activities: [
           {
@@ -90,21 +102,21 @@ export const days: Day[] = [
             title: "APRESENTAÇÃO DO DEPARTAMENTO DE INFORMÁTICA",
             tags: ["Ciência da Computação"],
             time: "13:30 -> 14:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "Apresentação institucional do Departamento de Informática (DIN), abordando sua estrutura, projetos, laboratórios, áreas de pesquisa e funcionamento acadêmico."
           },
           {
             title: "APRESENTAÇÃO DO CURSO DE CIÊNCIA DA COMPUTAÇÃO",
             tags: ["Ciência da Computação"],
             time: "14:30 -> 15:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "Detalhamento da grade curricular, oportunidades acadêmicas, projetos de extensão e pesquisa, além de orientações importantes para os novos estudantes do curso."
           },
           {
             title: "COFFEE BREAK",
             tags: ["Ciência da Computação"],
             time: "15:30 -> 16:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "☕☕☕"
           }
         ]
@@ -116,21 +128,21 @@ export const days: Day[] = [
             title: "APRESENTAÇÃO DO DEPARTAMENTO DE INFORMÁTICA",
             tags: ["Engenharia de Software"],
             time: "19:30 -> 20:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "Apresentação institucional do Departamento de Informática (DIN), abordando sua estrutura, projetos, laboratórios, áreas de pesquisa e funcionamento acadêmico."
           },
           {
             title: "APRESENTAÇÃO DO CURSO DE ENGENHARIA DE SOFTWARE",
             tags: ["Engenharia de Software"],
             time: "20:30 -> 21:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "Detalhamento da grade curricular, oportunidades acadêmicas, projetos de extensão e pesquisa, além de orientações importantes para os novos estudantes do curso"
           },
           {
             title: "COFFEE BREAK",
             tags: ["Engenharia de Software"],
             time: "21:30 -> 22:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "☕☕☕"
           }
         ]
@@ -180,14 +192,14 @@ export const days: Day[] = [
             title: "MESA REDONDA DE APRESENTAÇÃO DOS PROGRAMAS",
             tags: ["Ciência da Computação"],
             time: "13:30 -> 15:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "Mesa redonda com representantes de programas acadêmicos (CACCOM, Main, PET, Conectadas, RoboDIN, Enactus, Atlética e IEEE), apresentando oportunidades de participação ao longo da graduação."
           },
           {
             title: "WORKSHOP DE LINUX E SEU TERMINAL",
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "15:45 -> 17:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Laboratórios do Departamento",
             description: "Workshop introdutório sobre o sistema Linux e utilização do terminal, apresentando comandos básicos, organização de arquivos e noções fundamentais para o dia a dia acadêmico na área de tecnologia. O Workshop será realizado pelo programa PET-Informática."
           }
         ]
@@ -199,7 +211,7 @@ export const days: Day[] = [
             title: "MESA REDONDA DE APRESENTAÇÃO DOS PROGRAMAS",
             tags: ["Engenharia de Software"],
             time: "19:30 -> 21:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "Mesa redonda com representantes de programas acadêmicos (CAINFO, Main, PET, Conectadas, RoboDIN, Enactus, Atlética e IEEE), apresentando oportunidades de participação ao longo da graduação."
           }
         ]
@@ -218,14 +230,14 @@ export const days: Day[] = [
             title: "VIR, VER E VENCER! OS SEGREDOS DE COMO ENFRENTAR OS CURSOS DE GRADUAÇÃO DO DIN",
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "13:30 -> 14:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "Palestra do Prof. Dr. Alisson Svaigen sobre a jornada na UEM, abordando desafios, dicas e a importância da resiliência ao longo do curso."
           },
           {
             title: "CAMINHADA",
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "14:30 -> 17:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "A comissão de recepção realizará uma caminhada por alguns pontos característicos da UEM, com enigmas e jogos para integração dos novos calouros."
           }
         ]
@@ -237,7 +249,7 @@ export const days: Day[] = [
             title: "INTEGRAÇÃO",
             tags: ["Ciência da Computação", "Engenharia de Software"],
             time: "19:30 -> 22:30",
-            location: "Bloco C56 - DIN",
+            location: "Bloco C56 - DIN • Sala 102 (Auditório no segundo andar)",
             description: "À noite a comissão da recepção preparará o departamento para sediar uma série de enigmas para serem desvendados e resolvidos em conjunto pelos calouros."
           }
         ]
