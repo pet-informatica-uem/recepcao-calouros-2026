@@ -42,7 +42,7 @@ export default function Header({
   // Detecta tamanho da tela
   useEffect(() => {
     const checkScreen = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024);
     };
 
     checkScreen();
@@ -98,7 +98,7 @@ export default function Header({
           <div className="bg-black h-14 w-0.5 border-r-2"></div>
 
           {/* Entities Desktop */}
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <nav>
               <ul className="flex">
                 {Object.entries(DADOSENTIDADES).map(([chave, dados]) => (
@@ -121,7 +121,7 @@ export default function Header({
               </ul>
             </nav>
           </div>
-          <div className="hidden md:block bg-black h-14 w-0.5 border-r-2"></div>
+          <div className="hidden xl:block bg-black h-14 w-0.5 border-r-2"></div>
           {/* Subscription Button */}
           <div>
             <a
@@ -129,6 +129,7 @@ export default function Header({
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-2 md:py-4 border-3 border-white cursor-pointer
+              lg:hidden xl:flex
               hover:border-b-neutral-200 hover:border-r-neutral-200 hover:border-l-black hover:border-t-black hover:bg-gray-200"
             >
               <SiGoogleforms
@@ -142,7 +143,7 @@ export default function Header({
         </div>
 
         {/* Clock Desktop */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden xl:flex items-center gap-4">
           <div className="bg-black h-14 w-0.5 border-r-2"></div>
           <div className="text-3xl">
             <Clock />
