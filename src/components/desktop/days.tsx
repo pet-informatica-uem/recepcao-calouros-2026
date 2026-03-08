@@ -6,8 +6,10 @@ export type Activity = {
   description: string;
 };
 
+export type Periods = "MANHÃ" | "TARDE" | "NOITE";
+
 export type Period = {
-  name: "MANHÃ" | "TARDE" | "NOITE";
+  name: Periods;
   activities: Activity[];
 };
 
@@ -22,7 +24,8 @@ export const days: Day[] = [
   {
     id: "segunda",
     label: "DIA 09/03 (SEGUNDA - FEIRA)",
-    introText: "Na segunda-feira, a UEM realizará a Calourada 2026, resultado de parceria das pró-reitorias de Ensino (PEN) e de Extensão e Cultura (PEC), por meio da Diretoria de Cultura (DCU), com o Diretório Central de Estudantes (DCE). O evento contará com a realização de atividades culturais e artísticas.",
+    introText:
+      "Na segunda-feira, a UEM realizará a Calourada 2026, resultado de parceria das pró-reitorias de Ensino (PEN) e de Extensão e Cultura (PEC), por meio da Diretoria de Cultura (DCU), com o Diretório Central de Estudantes (DCE). O evento contará com a realização de atividades culturais e artísticas.",
     periods: [
       {
         name: "MANHÃ",
@@ -32,23 +35,26 @@ export const days: Day[] = [
             tags: ["Ciência da Computação"],
             time: "08:00 -> 08:30",
             location: "Em frente ao Restaurante Universitário (RU)",
-            description: "Recepção animada com as baterias e atléticas dos cursos."
+            description:
+              "Recepção animada com as baterias e atléticas dos cursos.",
           },
           {
             title: "INÍCIO DO CERIMONIAL",
             tags: ["Ciência da Computação"],
             time: "08:30 -> 09:00",
             location: "Restaurante Universitário (RU)",
-            description: "Abertura oficial da Calourada 2026 da UEM, com falas institucionais e Boas-vindas do Reitor, Vice-reitora, DEG, DCU e DCE."
+            description:
+              "Abertura oficial da Calourada 2026 da UEM, com falas institucionais e Boas-vindas do Reitor, Vice-reitora, DEG, DCU e DCE.",
           },
           {
             title: "APRESENTAÇÃO CULTURAL E CAFÉ DA MANHÃ",
             tags: ["Ciência da Computação"],
             time: "09:00",
             location: "Restaurante Universitário (RU)",
-            description: "Momento cultural seguido de um café da manhã para promover integração entre os estudantes."
-          }
-        ]
+            description:
+              "Momento cultural seguido de um café da manhã para promover integração entre os estudantes.",
+          },
+        ],
       },
       {
         name: "TARDE",
@@ -70,30 +76,34 @@ export const days: Day[] = [
             tags: ["Engenharia de Software"],
             time: "19:00 -> 19:30",
             location: "Em frente ao Restaurante Universitário (RU)",
-            description: "Recepção noturna com as baterias e atléticas dos cursos."
+            description:
+              "Recepção noturna com as baterias e atléticas dos cursos.",
           },
           {
             title: "INÍCIO DO CERIMONIAL",
             tags: ["Engenharia de Software"],
             time: "19:30 -> 20:00",
             location: "Restaurante Universitário (RU)",
-            description: "Abertura oficial da Calourada 2026 da UEM, com falas institucionais e Boas-vindas do Reitor, Vice-reitora, DEG, DCU e DCE."
+            description:
+              "Abertura oficial da Calourada 2026 da UEM, com falas institucionais e Boas-vindas do Reitor, Vice-reitora, DEG, DCU e DCE.",
           },
           {
             title: "APRESENTAÇÃO CULTURAL E LANCHE",
             tags: ["Engenharia de Software"],
             time: "20:00",
             location: "Restaurante Universitário (RU)",
-            description: "Momento cultural seguido de um lanche para promover integração entre os estudantes."
-          }
-        ]
-      }
-    ]
+            description:
+              "Momento cultural seguido de um lanche para promover integração entre os estudantes.",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "terça",
     label: "DIA 10/03 (TERÇA - FEIRA)",
-    introText: "Na terça-feira, os calouros conhecerão mais profundamente o Departamento de Informática, seus cursos, estrutura e oportunidades acadêmicas.",
+    introText:
+      "Na terça-feira, os calouros conhecerão mais profundamente o Departamento de Informática, seus cursos, estrutura e oportunidades acadêmicas.",
     periods: [
       {
         name: "TARDE",
@@ -152,7 +162,8 @@ export const days: Day[] = [
   {
     id: "quarta",
     label: "DIA 11/03 (QUARTA - FEIRA)",
-    introText: "Na quarta-feira, a UEM continuará as atividades da Calourada 2026, dedicada à integração geral dos estudantes com a comunidade universitária.",
+    introText:
+      "Na quarta-feira, a UEM continuará as atividades da Calourada 2026, dedicada à integração geral dos estudantes com a comunidade universitária.",
     periods: [
       {
         name: "MANHÃ",
@@ -162,9 +173,10 @@ export const days: Day[] = [
             tags: ["Ciência da Computação"],
             time: "10:00 -> 13:00",
             location: "Estacionamentos do RU e BCE",
-            description: "Feira de Boas Vindas com atrações artísticas, muita diversão e food trucks!"
-          }
-        ]
+            description:
+              "Feira de Boas Vindas com atrações artísticas, muita diversão e food trucks!",
+          },
+        ],
       },
       {
         name: "NOITE",
@@ -174,16 +186,18 @@ export const days: Day[] = [
             tags: ["Engenharia de Software"],
             time: "16:00 -> 22:00",
             location: "Estacionamentos do RU e BCE",
-            description: "Feira de Boas Vindas com atrações artísticas, muita diversão e food trucks!"
-          }
-        ]
-      }
-    ]
+            description:
+              "Feira de Boas Vindas com atrações artísticas, muita diversão e food trucks!",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "quinta",
     label: "DIA 12/03 (QUINTA - FEIRA)",
-    introText: "Na quinta-feira, os estudantes conhecerão os programas acadêmicos e participarão de atividades práticas voltadas à área da computação.",
+    introText:
+      "Na quinta-feira, os estudantes conhecerão os programas acadêmicos e participarão de atividades práticas voltadas à área da computação.",
     periods: [
       {
         name: "TARDE",
