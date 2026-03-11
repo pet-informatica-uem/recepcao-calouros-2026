@@ -26,7 +26,7 @@ export const DADOSENTIDADES = {
         discord: "https://discord.com/invite/q3fpMKW9CS",
         site: "https://www.petinfouem.com.br/",
         facebook: null,
-        linkedin: "linkedin.com/company/pet-informática-uem/"
+        linkedin: "https://www.linkedin.com/company/pet-informática-uem/"
     },
     "#conectadas": {
         image: "/entities/conectadas-pixel.png",
@@ -48,7 +48,7 @@ export const DADOSENTIDADES = {
         cor: "#FE0000",
         instagram: "https://www.instagram.com/caccomuem/",
         discord: null,
-        site: "http://www.din.uem.br/caccom/",
+        site: "https://www.uem.br/din/caccom",
         facebook: null,
         linkedin: null,
     },
@@ -60,7 +60,7 @@ export const DADOSENTIDADES = {
         cor: "#FD5920",
         instagram: "https://www.instagram.com/cainfouem/",
         discord: null,
-        site: "http://www.din.uem.br/cainfo/",
+        site: "https://www.uem.br/din/cainfo",
         facebook: null,
         linkedin: null,
     },
